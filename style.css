@@ -1,4 +1,4 @@
-/* Reset */
+/* Reset and Base */
 * {
   margin: 0;
   padding: 0;
@@ -8,13 +8,27 @@
 body {
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(135deg, #dbeafe, #f0f9ff);
-  color: #111;
-  min-height: 100vh;
+  color: #1f2937;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
-  padding: 20px;
+  justify-content: center;
+}
+
+/* Smooth Fade-In */
+.fade-in {
+  animation: fadeIn 1.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.container {
+  width: 100%;
+  max-width: 600px;
+  padding: 2rem;
 }
 
 /* Header */
@@ -24,75 +38,83 @@ header {
 }
 
 h1 {
-  font-size: 2.8rem;
-  color: #1e40af;
+  font-size: 2.6rem;
+  color: #1e3a8a;
 }
 
 .tagline {
   font-size: 1rem;
   color: #374151;
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
 }
 
-/* Card Container */
+/* Main Card */
 .card {
   background: white;
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  width: 100%;
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transition: all 0.3s ease;
 }
 
 label {
-  display: block;
-  margin-top: 1.2rem;
-  margin-bottom: 0.5rem;
-  font-weight: bold;
-  color: #1f2937;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
 }
 
 input, select {
   width: 100%;
   padding: 12px;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
   font-size: 1rem;
-  margin-bottom: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
   background: #f9fafb;
+  outline: none;
+  transition: 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
 button {
-  width: 100%;
-  padding: 12px;
-  border: none;
-  border-radius: 10px;
-  font-size: 1.1rem;
   background: linear-gradient(to right, #3b82f6, #6366f1);
   color: white;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 10px;
   cursor: pointer;
   transition: 0.3s;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
 
 button:hover {
   background: linear-gradient(to right, #1d4ed8, #4f46e5);
+  transform: scale(1.02);
 }
 
+/* Response Box */
 .response {
-  margin-top: 2rem;
+  background: #eff6ff;
   padding: 1rem;
-  background-color: #eff6ff;
   border-left: 4px solid #3b82f6;
   border-radius: 8px;
+  font-size: 1rem;
   min-height: 80px;
-  font-size: 1.05rem;
   line-height: 1.5;
+  white-space: pre-line;
 }
 
 /* Footer */
 footer {
-  margin-top: 3rem;
-  font-size: 0.9rem;
-  color: #6b7280;
+  margin-top: 2rem;
   text-align: center;
+  font-size: 0.85rem;
+  color: #6b7280;
 }
