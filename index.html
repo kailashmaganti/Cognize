@@ -7,38 +7,30 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
+  <div class="background"></div>
+
+  <main class="glass-container">
     <h1>Cognize</h1>
     <p>Your Personalized AI Learning Companion</p>
-  </header>
 
-  <main>
-    <section class="input-section">
-      <label for="concept">Enter a concept you want to learn:</label>
-      <input type="text" id="concept" placeholder="e.g., Newton's Third Law" />
-      
-      <label for="style">How do you learn best?</label>
-      <select id="style">
-        <option value="simple">Simple Explanation</option>
-        <option value="example">Example-Based</option>
-        <option value="analogy">Analogy-Based</option>
-        <option value="visual">Visual Description</option>
-        <option value="step">Step-by-Step Breakdown</option>
-      </select>
-      
-      <button id="explainBtn">Explain</button>
-    </section>
+    <label for="concept">🧠 Enter a concept:</label>
+    <input type="text" id="concept" placeholder="e.g., Newton's Laws" />
 
-    <section class="output-section">
-      <h2>AI Explanation:</h2>
-      <div id="responseBox">Waiting for input...</div>
-    </section>
+    <label for="style">🎨 Choose your learning style:</label>
+    <select id="style">
+      <option value="simple">Simple Explanation</option>
+      <option value="example">Example-Based</option>
+      <option value="analogy">Analogy-Based</option>
+      <option value="visual">Visual Description</option>
+      <option value="step">Step-by-Step Breakdown</option>
+    </select>
+
+    <button id="explainBtn">🧾 Explain It</button>
+
+    <div id="responseBox">Waiting for your input...</div>
   </main>
 
-  <footer>
-    <p>Made with 💡 by Kailash | Cognize © 2025</p>
-  </footer>
-
+  <footer>Built with 💡 by Kailash | © Cognize 2025</footer>
   <script src="script.js"></script>
 </body>
 </html>
