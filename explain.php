@@ -2,7 +2,7 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json");
 
-$apiKey = "YOUR_COHERE_API_KEY";
+$apiKey = "YfYYyltPWR63LMwRWj2YN8BaFAF8QDRR3n56Amjt";
 $input = json_decode(file_get_contents("php://input"), true);
 $concept = $input['concept'];
 $style = $input['style'];
