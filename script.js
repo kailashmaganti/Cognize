@@ -4,21 +4,24 @@ document.getElementById("explainBtn").addEventListener("click", () => {
   const output = document.getElementById("responseBox");
 
   if (!concept) {
-    output.textContent = "Please enter a concept to learn.";
+    output.textContent = "⚠️ Please enter a concept to explain.";
     return;
   }
 
   output.textContent = "🤖 Thinking...";
 
-  setTimeout(() => {
-    const responses = {
-      simple: `“${concept}” means something that can be simply understood as a basic rule or principle. It focuses on the core idea without complexity.`,
-      example: `Let’s explain “${concept}” through an example: Imagine you’re... (example-based explanation).`,
-      analogy: `“${concept}” is like a ... (analogy). Think of it as similar to something you already know.`,
-      visual: `Picture “${concept}” like a diagram: elements flowing from one side to another, interacting visually.`,
-      step: `Let’s break “${concept}” down step-by-step: Step 1 – Understand the basics... Step 2 – Connect it to real use.`,
-    };
-
-    output.textContent = responses[style] || "Explanation style not recognized.";
-  }, 800);
+  fetch("https://YOUR-BACKEND-URL/explain.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({ concept, style })
+  })
+    .then(res => res.json())
+    .then(data => {
+      output.textContent = data.generations[0].text.trim();
+    })
+    .catch(() => {
+      output.textContent = "❌ Oops! Couldn't fetch response from AI.";
+    });
 });
