@@ -3,34 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cognize – AI Learning Explainer</title>
+  <title>Cognize – Personalized AI Learning</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="background"></div>
-
-  <main class="glass-container">
+  <header>
     <h1>Cognize</h1>
-    <p>Your Personalized AI Learning Companion</p>
+    <p class="tagline">Your Personalized AI Learning Companion</p>
+  </header>
 
-    <label for="concept">🧠 Enter a concept:</label>
-    <input type="text" id="concept" placeholder="e.g., Newton's Laws" />
+  <main class="card">
+    <label for="concept">🧠 What concept do you want to understand?</label>
+    <input type="text" id="concept" placeholder="e.g., Quantum Entanglement" />
 
-    <label for="style">🎨 Choose your learning style:</label>
+    <label for="style">🎯 How should I explain it?</label>
     <select id="style">
       <option value="simple">Simple Explanation</option>
       <option value="example">Example-Based</option>
-      <option value="analogy">Analogy-Based</option>
+      <option value="analogy">Analogy</option>
       <option value="visual">Visual Description</option>
-      <option value="step">Step-by-Step Breakdown</option>
+      <option value="step">Step-by-Step</option>
     </select>
 
-    <button id="explainBtn">🧾 Explain It</button>
+    <button id="explainBtn">Explain Concept</button>
 
-    <div id="responseBox">Waiting for your input...</div>
+    <div id="responseBox" class="response">Waiting for input...</div>
   </main>
 
-  <footer>Built with 💡 by Kailash | © Cognize 2025</footer>
+  <footer>
+    <p>🚀 Built by Kailash | Cognize © 2025</p>
+  </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
