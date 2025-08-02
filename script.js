@@ -1,43 +1,43 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const form = document.getElementById("explain-form");
-  const responseBox = document.getElementById("responseBox");
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cognize – Personalized AI Learning</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Cognize</h1>
+      <p class="tagline">Your Personalized AI Learning Companion</p>
+    </header>
 
-  form.addEventListener("submit", async (e) => {
-    e.preventDefault(); // prevent page reload
+    <main class="card">
+      <form id="explain-form">
+        <label for="concept">🧠 What concept do you want to understand?</label><br />
+        <input type="text" id="concept" placeholder="e.g. Quantum Entanglement" required /><br /><br />
 
-    const concept = document.getElementById("concept").value.trim();
-    const style = document.getElementById("style").value;
+        <label for="style">🎯 Choose your explanation style:</label><br />
+        <select id="style">
+          <option value="simple">Simple Explanation</option>
+          <option value="example">Example-based</option>
+          <option value="analogy">Analogy</option>
+          <option value="visual">Visual Description</option>
+          <option value="step">Step-by-Step</option>
+        </select><br /><br />
 
-    if (!concept) {
-      responseBox.innerHTML = "❗ Please enter a concept to explain.";
-      return;
-    }
+        <button id="explainBtn" type="submit">🔍 Explain Concept</button>
+      </form>
 
-    responseBox.innerHTML = "⏳ Generating explanation...";
+      <div id="responseBox" class="response">💬 Waiting for input...</div>
+    </main>
 
-    try {
-      const response = await fetch("https://226e4566-3051-4936-a852-c16cc60b308e-00-1toij3m4uawqh.pike.replit.dev/explain.php", {, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ concept, style })
-      });
+    <footer>
+      <p>© 2025 Cognize by Kailash — Built with 🤍</p>
+    </footer>
+  </div>
 
-      if (!response.ok) {
-        throw new Error("AI service unreachable");
-      }
-
-      const result = await response.json();
-
-      if (result.generations && result.generations[0].text) {
-        responseBox.innerHTML = `<p>${result.generations[0].text.trim()}</p>`;
-      } else {
-        responseBox.innerHTML = "❌ Unexpected response format from AI.";
-      }
-    } catch (error) {
-      console.error(error);
-      responseBox.innerHTML = "❌ Oops! Couldn't fetch response from AI.";
-    }
-  });
-});
+  <script src="script.js"></script>
+</body>
+</html>
