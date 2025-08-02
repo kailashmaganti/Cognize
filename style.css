@@ -1,84 +1,80 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(to bottom, #f0f9ff, #c9f0ff);
+  background: linear-gradient(to right, #e0f7fa, #e3f2fd);
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  min-height: 100vh;
-  color: #333;
 }
 
 .container {
-  width: 90%;
   max-width: 600px;
-  margin-top: 50px;
-  text-align: center;
+  margin: 60px auto;
+  background: white;
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
-header h1 {
-  font-size: 2.5rem;
-  color: #0d47a1;
-  margin-bottom: 5px;
+h1 {
+  text-align: center;
+  font-size: 2.5em;
+  margin-bottom: 0;
 }
 
 .tagline {
-  font-size: 1.2rem;
-  color: #555;
+  text-align: center;
+  color: #666;
+  margin-top: 0;
   margin-bottom: 30px;
+  font-style: italic;
 }
 
-.card {
-  background-color: #fff;
-  padding: 30px 25px;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  animation: fadeIn 0.5s ease-in;
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
 input, select {
   width: 100%;
-  padding: 12px;
-  margin: 12px 0;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-size: 1rem;
+  padding: 10px;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1em;
 }
 
 button {
-  background-color: #0057ff;
+  margin-top: 20px;
+  padding: 12px 20px;
+  font-size: 16px;
+  background-color: #007bff;
   color: white;
   border: none;
-  padding: 12px 20px;
-  font-size: 1rem;
-  margin-top: 10px;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
 button:hover {
-  background-color: #003ecb;
+  background-color: #0056b3;
 }
 
-.response {
-  background-color: #f0f8ff;
-  border-left: 5px solid #2196f3;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 8px;
-  font-size: 1rem;
-  text-align: left;
+#responseBox {
+  margin-top: 25px;
+  background: #f4f4f4;
+  padding: 15px;
+  border-left: 5px solid #007bff;
+  border-radius: 5px;
+  font-size: 1.05em;
+  white-space: pre-wrap;
 }
 
-footer {
-  margin-top: 50px;
-  font-size: 0.9rem;
-  color: #888;
+/* 🎧 Voice Button */
+#listenBtn {
+  background-color: #28a745;
+  margin-left: 10px;
 }
 
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+#listenBtn:hover {
+  background-color: #218838;
 }
