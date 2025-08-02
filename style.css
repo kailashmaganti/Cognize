@@ -19,7 +19,7 @@ body {
 
 header h1 {
   font-size: 2.5rem;
-  color: #0d47a1;
+  color: #0077cc;
   margin-bottom: 5px;
 }
 
@@ -75,7 +75,8 @@ button:hover {
 footer {
   margin-top: 50px;
   font-size: 0.9rem;
-  color: #888;
+  color: #0077cc;
+  text-align: center;
 }
 
 @keyframes fadeIn {
