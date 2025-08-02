@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
     responseBox.innerHTML = "⌛ Asking AI... Please wait.";
 
     try {
-      const response = await fetch("https://YOUR-REPLIT-URL/explain.php", {
+      const response = await fetch("https://226e4566-3051-4936-a852-c16cc60b308e-00-1toij3m4uawqh.pike.replit.dev/explain.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ concept, style })
