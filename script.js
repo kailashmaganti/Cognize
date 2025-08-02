@@ -1,43 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cognize – Personalized AI Learning</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <div class="container">
-    <header>
-      <h1>Cognize</h1>
-      <p class="tagline">Your Personalized AI Learning Companion</p>
-    </header>
+document.addEventListener("DOMContentLoaded", () => {
+  const explainBtn = document.getElementById("explainBtn");
+  const conceptInput = document.getElementById("concept");
+  const styleSelect = document.getElementById("style");
+  const responseBox = document.getElementById("responseBox");
 
-    <main class="card">
-      <form id="explain-form">
-        <label for="concept">🧠 What concept do you want to understand?</label><br />
-        <input type="text" id="concept" placeholder="e.g. Quantum Entanglement" required /><br /><br />
+  explainBtn.addEventListener("click", async () => {
+    const concept = conceptInput.value.trim();
+    const style = styleSelect.value;
 
-        <label for="style">🎯 Choose your explanation style:</label><br />
-        <select id="style">
-          <option value="simple">Simple Explanation</option>
-          <option value="example">Example-based</option>
-          <option value="analogy">Analogy</option>
-          <option value="visual">Visual Description</option>
-          <option value="step">Step-by-Step</option>
-        </select><br /><br />
+    if (!concept) {
+      responseBox.innerHTML = "❗ Please enter a concept to explain.";
+      return;
+    }
 
-        <button id="explainBtn" type="submit">🔍 Explain Concept</button>
-      </form>
+    responseBox.innerHTML = "⌛ Asking AI... Please wait.";
 
-      <div id="responseBox" class="response">💬 Waiting for input...</div>
-    </main>
+    try {
+      const response = await fetch("https://YOUR-REPLIT-URL/explain.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ concept, style })
+      });
 
-    <footer>
-      <p>© 2025 Cognize by Kailash — Built with 🤍</p>
-    </footer>
-  </div>
-
-  <script src="script.js"></script>
-</body>
-</html>
+      const result = await response.json();
+      responseBox.innerHTML = `✅ <strong>Explanation:</strong> ${result.generations[0].text.trim()}`;
+    } catch (error) {
+      console.error(error);
+      responseBox.innerHTML = "❌ Oops! Couldn't fetch response from AI.";
+    }
+  });
+});
