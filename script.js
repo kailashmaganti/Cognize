@@ -10,7 +10,7 @@ document.getElementById("explainBtn").addEventListener("click", () => {
 
   output.textContent = "🤖 Thinking...";
 
-  fetch("https://226e4566-3051-4936-a852-c16cc60b308e-00-1toij3m4uawqh.pike.replit.dev", {
+  fetch("https://226e4566-3051-4936-a852-c16cc60b308e-00-1toij3m4uawqh.pike.replit.dev/explain.php", {, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
