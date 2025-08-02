@@ -2,40 +2,32 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cognize – Personalized AI Learning</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Cognize – AI-Powered Learning</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container fade-in">
-    <header>
-      <h1>Cognize</h1>
-      <p class="tagline">Your Personalized AI Learning Companion</p>
-    </header>
+  <div class="container">
+    <h1>Cognize 🧠</h1>
+    <p class="tagline">Personalized AI Concept Explainer</p>
 
-    <main class="card">
-      <label for="concept">💡 What concept do you want to understand?</label>
-      <input type="text" id="concept" placeholder="e.g., Quantum Entanglement" />
+    <label for="concept">🔍 What concept do you want to understand?</label>
+    <input type="text" id="concept" placeholder="e.g., Newton's 3rd Law" />
 
-      <label for="style">🧠 Choose your explanation style:</label>
-      <select id="style">
-        <option value="simple">Simple Explanation</option>
-        <option value="example">Example-based</option>
-        <option value="analogy">Analogy</option>
-        <option value="visual">Visual Description</option>
-        <option value="step">Step-by-Step</option>
-      </select>
+    <label for="style">🎨 Choose your explanation style:</label>
+    <select id="style">
+      <option value="simple">Simple</option>
+      <option value="example">Real-life Example</option>
+      <option value="analogy">Analogy</option>
+      <option value="visual">Visual Description</option>
+      <option value="step">Step-by-Step</option>
+    </select>
 
-      <!-- Explain Button -->
-      <button id="explainBtn">✨ Explain Concept</button>
+    <button id="explainBtn">✨ Explain Concept</button>
 
-      <!-- AI Response Area -->
-      <div id="responseBox" class="response">💬 Waiting for input...</div>
-    </main>
+    <div id="responseBox"></div>
 
-    <footer>
-      <p>© 2025 Cognize by Kailash — Built with ⚡</p>
-    </footer>
+    <button id="listenBtn">🔊 Listen to Explanation</button>
   </div>
 
   <script src="script.js"></script>
