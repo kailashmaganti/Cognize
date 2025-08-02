@@ -60,14 +60,12 @@ document.addEventListener("DOMContentLoaded", () => {
     quizBox.innerHTML = "📚 Generating quiz...";
 
     try {
-      const quizPrompt = `Ask 3 simple quiz questions (no answers) to test understanding of: ${concept}`;
-
-      const response = await fetch("https://226e4566-3051-4936-a852-c16cc60b308e-00-1toij3m4uawqh.pike.replit.dev/explain.php", {
+      const response = await fetch("https://226e4566-3051-4936-a852-c16cc60b308e-00-1toij3m4uawqh.pike.replit.dev/quiz.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ concept: quizPrompt, style: "simple" })
+        body: JSON.stringify({ concept })
       });
 
       const result = await response.json();
