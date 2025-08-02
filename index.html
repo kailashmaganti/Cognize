@@ -3,21 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Cognize – AI-Powered Learning</title>
+  <title>Cognize – Personalised AI learning  </title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
+  <div class="container fade-in">
+    <header></header>
     <h1>Cognize 🧠</h1>
-    <p class="tagline">Personalized AI Concept Explainer</p>
+    <p class="tagline">Your Personalized AI Learning Comapnion</p>
+  </header>
+ <main class="card">
+    <label for="concept">💡 What concept do you want to understand?</label>
+    <input type="text" id="concept" placeholder="e.g., Quantum Entanglement" />
 
-    <label for="concept">🔍 What concept do you want to understand?</label>
-    <input type="text" id="concept" placeholder="e.g., Newton's 3rd Law" />
-
-    <label for="style">🎨 Choose your explanation style:</label>
+    <label for="style">🧠 Choose your explanation style:</label>
     <select id="style">
-      <option value="simple">Simple</option>
-      <option value="example">Real-life Example</option>
+      <option value="simple">Simple Explanation</option>
+      <option value="example">Example-based</option>
       <option value="analogy">Analogy</option>
       <option value="visual">Visual Description</option>
       <option value="step">Step-by-Step</option>
@@ -25,10 +27,18 @@
 
     <button id="explainBtn">✨ Explain Concept</button>
 
-    <div id="responseBox"></div>
+   <div id="responseBox" class="response">💬 Waiting for input...
+
 
     <button id="listenBtn">🔊 Listen to Explanation</button>
   </div>
+ </main>
+    <footer>
+      <P>© 2025 Cognize by Kailash — Built with ⚡</p>
+
+    </footer>
+  </div>
+
 
   <script src="script.js"></script>
 </body>
