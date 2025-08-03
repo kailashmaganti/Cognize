@@ -110,3 +110,20 @@ footer {
   font-size: 1rem;
   text-align: left;
 }
+input[type="text"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 600px) {
+  input[type="text"] {
+    font-size: 15px;
+    padding: 14px;
+    margin-bottom: 16px;
+  }
+}
