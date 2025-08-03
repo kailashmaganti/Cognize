@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     quizBox.innerHTML = ""; // Clear quiz when explaining again
 
     try {
-      const response = await fetch("http://cognize.infinityfreeapp.com/explain.php", {
+      const response = await fetch("https://cognize.infinityfreeapp.com/explain.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     quizBox.innerHTML = "📚 Generating quiz...";
 
     try {
-fetch("http://cognize.infinityfreeapp.com/quiz.php", {
+fetch("https://cognize.infinityfreeapp.com/quiz.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
