@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     quizBox.innerHTML = "📚 Generating quiz...";
 
     try {
-      const response = await fetch("https://226e4566-3051-4936-a852-c16cc60b308e-00-1toij3m4uawqh.pike.replit.dev/quiz.php", {
+fetch("http://magantikailash.page.gd/quiz.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
