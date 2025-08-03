@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
     quizBox.innerHTML = "📚 Generating quiz...";
 
     try {
-fetch("https://cognize.infinityfreeapp.com/quiz.php", {
+      const response = await fetch("https://cognize.infinityfreeapp.com/quiz.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -76,4 +76,3 @@ fetch("https://cognize.infinityfreeapp.com/quiz.php", {
     }
   });
 });
-
