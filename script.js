@@ -20,7 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
     quizBox.innerHTML = ""; // Clear quiz when explaining again
 
     try {
-      const response = await fetch("https://226e4566-3051-4936-a852-c16cc60b308e-00-1toij3m4uawqh.pike.replit.dev/explain.php", {
+      const response = await fetch("http://magantikailash.page.gd/explain.php", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
